@@ -1,0 +1,16 @@
+-- SQL para criação das tabelas (clientes e pedidos)
+CREATE TABLE clientes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    email TEXT NOT NULL,
+    senha TEXT NOT NULL
+);
+
+CREATE TABLE pedidos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER,
+    produto_id INTEGER,
+    quantidade INTEGER,
+    FOREIGN KEY(customer_id) REFERENCES clientes(id)
+);
+
