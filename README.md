@@ -1,10 +1,6 @@
-Desculpe pela confusão! Vou corrigir a versão do README para incluir o SQLite3, já que ele é parte essencial do seu projeto. Também removo o `express` que não era necessário, já que o foco aqui é o uso do SQLite3 com Node.js. Aqui está o README corrigido:
-
----
-
 # APIs_NodeJs
 
-Repository containing 8 lessons focused on creating APIs with Node.js and SQLite3. Each lesson covers a specific topic related to building back-end applications using Node.js and SQLite3.
+Repository with small examples focused on creating APIs with Node.js, using databases (such as SQLite3). Each lesson covers a specific topic related to building back-end applications using Node.js and databases.
 
 ## How to Run
 
@@ -120,16 +116,22 @@ Repository containing 8 lessons focused on creating APIs with Node.js and SQLite
      http://localhost:3000/api/users
      ```
 
----
-
-## Languages
+Languages
 
 <div align="left">  
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="60" alt="HTML logo" />  
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="60" alt="CSS logo" />  
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="60" alt="JavaScript logo" />  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="60" alt="Node.js logo" />  
+</div>  
+
+## Library
+
+<div align="left">  
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="60" alt="SQLite logo" />  
-</div>
+</div>  
 
----
+## Softwares
 
-Agora, o README está ajustado corretamente para o uso de **SQLite3** e **Node.js** em todas as plataformas e inclui a instalação do **SQLite3** nas etapas.
+<div align="left">  
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" height="60" alt="Node.js logo" />  
+</div>  
