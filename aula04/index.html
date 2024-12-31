@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Aula 04</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Produtos</h1>
+    </header>
+
+    <main>
+        <section id="product-list">
+            <h2>Produtos Disponíveis</h2>
+            <ul id="products"></ul>
+        </section>
+
+        <section id="add-product">
+            <h2>Criar Produto</h2>
+            <form id="product-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" required>
+
+                <label for="price">Preço:</label>
+                <input type="number" id="price" required>
+
+                <label for="slug">Slug:</label>
+                <input type="text" id="slug" required>
+
+                <label for="tag">Tag:</label>
+                <input type="text" id="tag" required>
+
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aula 04 - Criando Produtos</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function loadProducts() {
+                fetch('http://localhost:3000/api/products')
+                    .then(response => response.json())
+                    .then(products => {
+                        const productList = document.getElementById('products');
+                        productList.innerHTML = '';
+
+                        products.forEach(product => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `${product.name} - ${product.price} - ${product.slug} - ${product.tag}`;
+                            productList.appendChild(listItem);
+                        });
+                    });
+            }
+
+            loadProducts();
+
+            document.getElementById('product-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const description = document.getElementById('description').value;
+                const price = document.getElementById('price').value;
+                const slug = document.getElementById('slug').value;
+                const tag = document.getElementById('tag').value;
+
+                const productData = { name, description, price, slug, tag };
+
+                fetch('http://localhost:3000/api/products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(productData),
+                })
+                .then(response => response.json())
+                .then(() => {
+                    alert('Produto adicionado com sucesso!');
+                    loadProducts();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
